@@ -20,7 +20,7 @@ if(preg_match('/Success/i', $otp)){
     echo "Sever is busy, please try again later.";
     exit;
 } else {
-    echo "Gagal";
+    echo "$otp \n";
     exit;
 }
 ?>
