@@ -1,13 +1,4 @@
 <?php
-function gen_uuid() {
-    return sprintf( '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
-        mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ),
-        mt_rand( 0, 0xffff ),
-        mt_rand( 0, 0x0fff ) | 0x4000,
-        mt_rand( 0, 0x3fff ) | 0x8000,
-        mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff )
-    );
-}
 $uuid = gen_uuid();
 
 echo 'Input Country Code (Ex: 1 / 62) : ';
@@ -31,5 +22,14 @@ if(preg_match('/Success/i', $otp)){
 } else {
     echo "$otp \n";
     exit;
+}
+function gen_uuid() {
+    return sprintf( '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
+        mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ),
+        mt_rand( 0, 0xffff ),
+        mt_rand( 0, 0x0fff ) | 0x4000,
+        mt_rand( 0, 0x3fff ) | 0x8000,
+        mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff )
+    );
 }
 ?>
