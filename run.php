@@ -1,5 +1,14 @@
 <?php
-$uuid = 'd790ab7c-' . rand(1000,9999) . '-' . rand(1000,9999) . '-' . rand(1000,9999) . '-5641fab44281';
+function gen_uuid() {
+    return sprintf( '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
+        mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ),
+        mt_rand( 0, 0xffff ),
+        mt_rand( 0, 0x0fff ) | 0x4000,
+        mt_rand( 0, 0x3fff ) | 0x8000,
+        mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff )
+    );
+}
+$uuid = gen_uuid();
 
 echo 'Input Country Code (Ex: 1 / 62) : ';
 $areaCode = trim(fgets(STDIN));
