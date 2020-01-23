@@ -17,10 +17,10 @@ if(preg_match('/Success/i', $otp)){
     $redeem = file_get_contents('http://faridfac.herokuapp.com/clipclaps/redeem.php?no='.$no.'&otp='.$otpSMS.'&uuid='.$uuid.'&areacode='.$areaCode.'&reff='.$reff)."\n";
     echo $redeem;
 } else if (preg_match('/Sever is busy, please try again later./i', $otp)){
-    echo "Sever is busy, please try again later.";
+    echo "Server is busy, please try again later.";
     exit;
 } else {
-    echo "Gagal \n";
+    echo "$otp \n";
     exit;
 }
 ?>
