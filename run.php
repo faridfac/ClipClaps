@@ -1,9 +1,10 @@
 <?php
 $uuid = gen_uuid();
 
-echo 'Input Country Code (Ex: 1 / 62) : ';
-$areaCode = trim(fgets(STDIN));
-echo "Input Phone Number : ";
+// echo 'Input Country Code (Ex: 1 / 62) : ';
+$areaCode = "1";
+echo "Input Phone Number Tanpa 1 diawal\n";
+echo "Input Phone Number (Ex: 315 / 250) : ";
 $no = trim(fgets(STDIN));
 
 $otp = file_get_contents('http://faridfac.herokuapp.com/clipclaps/otp.php?no='.$no.'&id='.$uuid.'&areacode='.$areaCode);
