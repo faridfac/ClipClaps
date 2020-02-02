@@ -13,10 +13,10 @@ if(preg_match('/Success/i', $otp)){
     echo 'Input Refferal Code : ';
     $reff = trim(fgets(STDIN));
     $redeem = file_get_contents('http://faridfac.herokuapp.com/clipclaps/redeem.php?no='.$no.'&otp='.$otpSMS.'&uuid='.$uuid.'&areacode='.$areaCode.'&reff='.$reff);
-    echo $redeem;
+    echo color($color = "green" , "$redeem \n");
     goto awal;
 } else {
-    echo "$otp \n";
+    echo color($color = "red" , "$otp\n");
     exit;
 }
 
@@ -28,5 +28,19 @@ function gen_uuid() {
         mt_rand( 0, 0x3fff ) | 0x8000,
         mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff )
     );
+}
+
+function color($color = "default" , $text) {
+  $arrayColor = array(
+    'grey' 		=> '1;30',
+    'red' 		=> '1;31',
+    'green' 	=> '1;32',
+    'yellow' 	=> '1;33',
+    'blue' 		=> '1;34',
+    'purple' 	=> '1;35',
+    'nevy' 		=> '1;36',
+    'white' 	=> '1;0',
+  );
+  return "\033[".$arrayColor[$color]."m".$text."\033[0m";
 }
 ?>
