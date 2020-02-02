@@ -6,13 +6,13 @@ $areaCode = "1";
 echo "Input Phone Number Tanpa 1 diawal\n";
 echo "Input Phone Number (Ex: 315 / 250) : ";
 $no = trim(fgets(STDIN));
-$otp = file_get_contents('https://megrampedia.com/clipclaps/otp.php?no='.$no.'&id='.$uuid.'&areacode='.$areaCode);
+$otp = file_get_contents('https://faridfac.herokuapp.com/clipclaps/otp.php?no='.$no.'&id='.$uuid.'&areacode='.$areaCode);
 if(preg_match('/Success/i', $otp)){
     echo 'Input OTP Code : ';
     $otpSMS = trim(fgets(STDIN));
     echo 'Input Refferal Code : ';
     $reff = trim(fgets(STDIN));
-    $redeem = file_get_contents('https://megrampedia.com/clipclaps/redeem.php?no='.$no.'&otp='.$otpSMS.'&uuid='.$uuid.'&areacode='.$areaCode.'&reff='.$reff);
+    $redeem = file_get_contents('https://faridfac.herokuapp.com/clipclaps/redeem.php?no='.$no.'&otp='.$otpSMS.'&uuid='.$uuid.'&areacode='.$areaCode.'&reff='.$reff);
     echo color($color = "green" , "$redeem \n");
     goto awal;
 } else {
