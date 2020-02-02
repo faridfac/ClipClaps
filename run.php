@@ -6,7 +6,7 @@ $areaCode = trim(fgets(STDIN));
 echo "Input Phone Number : ";
 $no = trim(fgets(STDIN));
 
-$otp = file_get_contents('http://faridfac.herokuapp.com/clipclaps/otp.php?no='.$no.'&id='.$uuid.'&areacode='.$areaCode)."\n";
+$otp = file_get_contents('http://faridfac.herokuapp.com/clipclaps/otp.php?no='.$no.'&id='.$uuid.'&areacode='.$areaCode);
 
 if(preg_match('/Success/i', $otp)){
     echo 'Input OTP Code : ';
@@ -14,7 +14,7 @@ if(preg_match('/Success/i', $otp)){
     echo 'Input Refferal Code : ';
     $reff = trim(fgets(STDIN));
 
-    $redeem = file_get_contents('http://faridfac.herokuapp.com/clipclaps/redeem.php?no='.$no.'&otp='.$otpSMS.'&uuid='.$uuid.'&areacode='.$areaCode.'&reff='.$reff)."\n";
+    $redeem = file_get_contents('http://faridfac.herokuapp.com/clipclaps/redeem.php?no='.$no.'&otp='.$otpSMS.'&uuid='.$uuid.'&areacode='.$areaCode.'&reff='.$reff);
     echo $redeem;
 } else if (preg_match('/Server is busy, please try again later./i', $otp)){
     echo "Server is busy, please try again later.";
