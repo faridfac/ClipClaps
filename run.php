@@ -1,4 +1,5 @@
 <?php
+awal:
 $uuid = gen_uuid();
 
 // echo 'Input Country Code (Ex: 1 / 62) : ';
@@ -17,6 +18,7 @@ if(preg_match('/Success/i', $otp)){
 
     $redeem = file_get_contents('http://faridfac.herokuapp.com/clipclaps/redeem.php?no='.$no.'&otp='.$otpSMS.'&uuid='.$uuid.'&areacode='.$areaCode.'&reff='.$reff);
     echo $redeem;
+    goto awal;
 } else {
     echo "$otp \n";
     exit;
