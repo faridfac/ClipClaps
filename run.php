@@ -1,4 +1,5 @@
 <?php
+// Clipclaps BOT
 awal:
 $uuid = gen_uuid();
 // echo 'Input Country Code (Ex: 1 / 62) : ';
