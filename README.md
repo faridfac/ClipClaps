@@ -1,2 +1,3 @@
-# ClipClaps
-bot auto create + auto reff clipclaps
+# BOT ClipClaps
+- auto create
+- auto reff clipclaps
