@@ -1,5 +1,5 @@
 <?php
-awal:
+goback:
 $uuid = gen_uuid();
 // echo 'Input Country Code (Ex: 1 / 62) : ';
 $areaCode = "1";
@@ -14,7 +14,7 @@ if(preg_match('/Success/i', $otp)){
     $reff = trim(fgets(STDIN));
     $redeem = file_get_contents('https://faridfac.herokuapp.com/clipclaps/redeem.php?no='.$no.'&otp='.$otpSMS.'&uuid='.$uuid.'&areacode='.$areaCode.'&reff='.$reff);
     echo color($color = "green" , "$redeem \n");
-    goto awal;
+    goto goback;
 } else {
     echo color($color = "red" , "$otp\n");
     exit;
