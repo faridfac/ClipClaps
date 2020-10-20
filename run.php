@@ -2,6 +2,7 @@
 awal:
 $uuid = gen_uuid();
 // echo 'Input Country Code (Ex: 1 / 62) : ';
+$username = "clipclapsid";
 $areaCode = "1";
 echo "Input Phone Number Tanpa 1 diawal\n";
 echo "Input Phone Number (Ex: 315 / 250) : ";
