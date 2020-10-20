@@ -1,4 +1,8 @@
 <?php
+ $randomuser = file_get_contents('https://aldmlc.com/user.php?qty=1&domain=xsingles.site');
+    $json = json_decode($randomuser, true);
+    $data = $json['result']['0'];
+    return $data;
 awal:
 $uuid = gen_uuid();
 // echo 'Input Country Code (Ex: 1 / 62) : ';
